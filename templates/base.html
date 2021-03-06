@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if title %}
+    <title>{{ title }} | Flask Blog</title>
+    {% else %}
+    <title>Flask Blog</title>
+    {% endif %}
+
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='w3.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="w3-content" style="max-width:1400px">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+
+        {% for category, message in messages %}
+
+        {% if category == "success" %}
+        <div class="w3-panel w3-pale-green w3-display-container" style="margin-left: 16px; margin-right: 16px;">
+            <!-- <h3>Success!</h3> -->
+            <p>{{ message }}</p>
+        </div>
+        {% endif %}
+        {% if category == "info" %}
+        <div class="w3-panel w3-pale-blue w3-display-container" style="margin-left: 16px; margin-right: 16px;">
+            <!-- <h3>Info!</h3> -->
+            <p>{{ message }}</p>
+        </div>
+        {% endif %}
+        {% if category == "warning" %}
+        <div class="w3-panel w3-pale-yellow w3-display-container" style="margin-left: 16px; margin-right: 16px;">
+            <!-- <h3>Warning!</h3> -->
+            <p>{{ message }}</p>
+        </div>
+        {% endif %}
+        {% if category == "danger" %}
+        <div class="w3-panel w3-pale-red w3-display-container" style="margin-left: 16px; margin-right: 16px;">
+            <!-- <h3>Danger!</h3> -->
+            <p>{{ message }}</p>
+        </div>
+        {% endif %}
+
+        {% endfor %}
+
+        {% endif %}
+        {% endwith %}
+
+
+
+
+
+
+
+
+
+        <div class="w3-row">
+
+            <!-- Blog entries -->
+            <div class="w3-col l8 s12">
+
+                <!-- Blog entry -->
+                {% block content %}{% endblock %}
+                <!-- END BLOG ENTRIES -->
+
+            </div>
+
+            <!-- Sidebar widgets -->
+            {% include 'sidebar.html' %}
+
+        </div><br>
+    </div>
+
+
+</body>
+
+</html>
