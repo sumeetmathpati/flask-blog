@@ -31,25 +31,25 @@
         {% for category, message in messages %}
 
         {% if category == "success" %}
-        <div class="w3-panel w3-pale-green w3-display-container" style="margin-left: 16px; margin-right: 16px;">
+        <div class="w3-panel w3-pale-green w3-display-container w3-round" style="margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
             <!-- <h3>Success!</h3> -->
             <p>{{ message }}</p>
         </div>
         {% endif %}
         {% if category == "info" %}
-        <div class="w3-panel w3-pale-blue w3-display-container" style="margin-left: 16px; margin-right: 16px;">
+        <div class="w3-panel w3-pale-blue w3-display-container w3-round" style="margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
             <!-- <h3>Info!</h3> -->
             <p>{{ message }}</p>
         </div>
         {% endif %}
         {% if category == "warning" %}
-        <div class="w3-panel w3-pale-yellow w3-display-container" style="margin-left: 16px; margin-right: 16px;">
+        <div class="w3-panel w3-pale-yellow w3-display-container w3-round" style="margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
             <!-- <h3>Warning!</h3> -->
             <p>{{ message }}</p>
         </div>
         {% endif %}
         {% if category == "danger" %}
-        <div class="w3-panel w3-pale-red w3-display-container" style="margin-left: 16px; margin-right: 16px;">
+        <div class="w3-panel w3-pale-red w3-display-container w3-round" style="margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
             <!-- <h3>Danger!</h3> -->
             <p>{{ message }}</p>
         </div>
